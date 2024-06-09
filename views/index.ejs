@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fluid Reserve</title>
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body bg-neutral>
+  <%- include('partials/navbar') %>
+  <div class="container">
+  <!--   <h1 class="my-4">Fluid Reserve</h1>
+    <h2 class="my-4">Item List</h2> -->
+    <ul class="list-group mb-4">
+      <% items.forEach(item => { %>
+        <li class="list-group-item">
+          <strong><%= item.name %></strong>: <%= item.description %>
+        </li>
+      <% }) %>
+    </ul>
+
+    <h2>Add a New Item</h2>
+    <form action="/add-item " method="POST">
+      <div class="form-group h-14 bg-gradient-to-r from-cyan-500 to-blue-500">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" class="form-control" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-secondary">Add Item</button>
+    </form>
+
+ <!--    <h2 class="my-4">User Profiles</h2>
+    <ul class="list-group mb-4">
+      <% users.forEach(user => { %>
+        <li class="list-group-item">
+          <strong><%= user.firstName %> <%= user.lastName %></strong> (<%= user.walletAddress %>): <%= user.bio %>
+        </li>
+      <% }) %>
+    </ul>
+
+    <a href="/profiles" class="btn btn-secondary">Create Profile</a> -->
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="/js/scripts.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
